@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "name": "ai-shipment-optimization",
+  "builds": [
+    {
+      "src": "deploy.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "deploy.py"
+    }
+  ],
+  "env": {
+    "FLASK_ENV": "production"
+  },
+  "functions": {
+    "deploy.py": {
+      "maxDuration": 30
+    }
+  }
+}

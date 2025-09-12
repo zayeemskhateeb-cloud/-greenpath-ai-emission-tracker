@@ -1,0 +1,263 @@
+{
+  "timestamp": "2025-09-10T23:56:33.497674",
+  "total_shipments": 500,
+  "model_accuracy": 0.822,
+  "on_time_rate": 0.254,
+  "total_alerts": 364,
+  "high_risk_shipments": 341,
+  "routes_optimized": 3,
+  "sample_shipments": [
+    {
+      "tracking_number": "TRK000001",
+      "origin": "Houston",
+      "origin_lat": 29.7604,
+      "origin_lng": -95.3698,
+      "destination": "Los Angeles",
+      "destination_lat": 34.0522,
+      "destination_lng": -118.2437,
+      "distance_km": 2206.3,
+      "scheduled_delivery": "2025-09-12 16:03",
+      "delay_probability": 0.9,
+      "delay_minutes": 98.9,
+      "is_delayed": true,
+      "status": "in_transit"
+    },
+    {
+      "tracking_number": "TRK000002",
+      "origin": "Dallas",
+      "origin_lat": 32.7767,
+      "origin_lng": -96.797,
+      "destination": "San Diego",
+      "destination_lat": 32.7157,
+      "destination_lng": -117.1611,
+      "distance_km": 1901.6,
+      "scheduled_delivery": "2025-09-12 12:13",
+      "delay_probability": 0.9,
+      "delay_minutes": 96.8,
+      "is_delayed": true,
+      "status": "in_transit"
+    },
+    {
+      "tracking_number": "TRK000003",
+      "origin": "Dallas",
+      "origin_lat": 32.7767,
+      "origin_lng": -96.797,
+      "destination": "Chicago",
+      "destination_lat": 41.8781,
+      "destination_lng": -87.6298,
+      "distance_km": 1295.0,
+      "scheduled_delivery": "2025-09-12 06:59",
+      "delay_probability": 0.825,
+      "delay_minutes": 15.6,
+      "is_delayed": true,
+      "status": "pending"
+    },
+    {
+      "tracking_number": "TRK000004",
+      "origin": "San Jose",
+      "origin_lat": 37.3382,
+      "origin_lng": -121.8863,
+      "destination": "Philadelphia",
+      "destination_lat": 39.9526,
+      "destination_lng": -75.1652,
+      "distance_km": 4021.5,
+      "scheduled_delivery": "2025-09-14 16:06",
+      "delay_probability": 0.9,
+      "delay_minutes": 0,
+      "is_delayed": false,
+      "status": "pending"
+    },
+    {
+      "tracking_number": "TRK000005",
+      "origin": "Chicago",
+      "origin_lat": 41.8781,
+      "origin_lng": -87.6298,
+      "destination": "New York",
+      "destination_lat": 40.7128,
+      "destination_lng": -74.006,
+      "distance_km": 1144.3,
+      "scheduled_delivery": "2025-09-12 01:45",
+      "delay_probability": 0.704,
+      "delay_minutes": 57.2,
+      "is_delayed": true,
+      "status": "pending"
+    },
+    {
+      "tracking_number": "TRK000006",
+      "origin": "Philadelphia",
+      "origin_lat": 39.9526,
+      "origin_lng": -75.1652,
+      "destination": "Phoenix",
+      "destination_lat": 33.4484,
+      "destination_lng": -112.074,
+      "distance_km": 3344.1,
+      "scheduled_delivery": "2025-09-13 12:37",
+      "delay_probability": 0.9,
+      "delay_minutes": 54.4,
+      "is_delayed": true,
+      "status": "in_transit"
+    },
+    {
+      "tracking_number": "TRK000007",
+      "origin": "Houston",
+      "origin_lat": 29.7604,
+      "origin_lng": -95.3698,
+      "destination": "San Antonio",
+      "destination_lat": 29.4241,
+      "destination_lng": -98.4936,
+      "distance_km": 304.3,
+      "scheduled_delivery": "2025-09-11 16:23",
+      "delay_probability": 0.464,
+      "delay_minutes": 0,
+      "is_delayed": false,
+      "status": "in_transit"
+    },
+    {
+      "tracking_number": "TRK000008",
+      "origin": "Dallas",
+      "origin_lat": 32.7767,
+      "origin_lng": -96.797,
+      "destination": "San Antonio",
+      "destination_lat": 29.4241,
+      "destination_lng": -98.4936,
+      "distance_km": 406.3,
+      "scheduled_delivery": "2025-09-11 18:45",
+      "delay_probability": 0.337,
+      "delay_minutes": 0,
+      "is_delayed": false,
+      "status": "pending"
+    },
+    {
+      "tracking_number": "TRK000009",
+      "origin": "Los Angeles",
+      "origin_lat": 34.0522,
+      "origin_lng": -118.2437,
+      "destination": "Phoenix",
+      "destination_lat": 33.4484,
+      "destination_lng": -112.074,
+      "distance_km": 574.3,
+      "scheduled_delivery": "2025-09-12 04:35",
+      "delay_probability": 0.333,
+      "delay_minutes": 116.4,
+      "is_delayed": true,
+      "status": "in_transit"
+    },
+    {
+      "tracking_number": "TRK000010",
+      "origin": "San Antonio",
+      "origin_lat": 29.4241,
+      "origin_lng": -98.4936,
+      "destination": "Houston",
+      "destination_lat": 29.7604,
+      "destination_lng": -95.3698,
+      "distance_km": 304.3,
+      "scheduled_delivery": "2025-09-11 18:42",
+      "delay_probability": 0.292,
+      "delay_minutes": 0,
+      "is_delayed": false,
+      "status": "in_transit"
+    }
+  ],
+  "sample_routes": [
+    {
+      "route_id": 1,
+      "path": [
+        "New York",
+        "Philadelphia",
+        "Chicago",
+        "Denver",
+        "Los Angeles"
+      ],
+      "total_distance": 2789.5,
+      "estimated_time": 46.5,
+      "algorithm": "Dijkstra",
+      "efficiency_score": 87.3
+    },
+    {
+      "route_id": 2,
+      "path": [
+        "New York",
+        "Pittsburgh",
+        "Chicago",
+        "Kansas City",
+        "Los Angeles"
+      ],
+      "total_distance": 2834.2,
+      "estimated_time": 47.2,
+      "algorithm": "A*",
+      "efficiency_score": 85.1
+    },
+    {
+      "route_id": 3,
+      "path": [
+        "New York",
+        "Cleveland",
+        "Chicago",
+        "Omaha",
+        "Denver",
+        "Los Angeles"
+      ],
+      "total_distance": 2901.8,
+      "estimated_time": 48.4,
+      "algorithm": "A* (Weather-Adjusted)",
+      "efficiency_score": 83.7
+    }
+  ],
+  "sample_alerts": [
+    {
+      "type": "HIGH_DELAY_RISK",
+      "severity": "HIGH",
+      "tracking_number": "TRK000001",
+      "message": "High delay risk (90.0%) for Houston -> Los Angeles",
+      "recommendations": [
+        "Consider alternative routing",
+        "Notify customer proactively",
+        "Monitor weather conditions"
+      ]
+    },
+    {
+      "type": "HIGH_DELAY_RISK",
+      "severity": "HIGH",
+      "tracking_number": "TRK000002",
+      "message": "High delay risk (90.0%) for Dallas -> San Diego",
+      "recommendations": [
+        "Consider alternative routing",
+        "Notify customer proactively",
+        "Monitor weather conditions"
+      ]
+    },
+    {
+      "type": "HIGH_DELAY_RISK",
+      "severity": "HIGH",
+      "tracking_number": "TRK000003",
+      "message": "High delay risk (82.5%) for Dallas -> Chicago",
+      "recommendations": [
+        "Consider alternative routing",
+        "Notify customer proactively",
+        "Monitor weather conditions"
+      ]
+    },
+    {
+      "type": "HIGH_DELAY_RISK",
+      "severity": "HIGH",
+      "tracking_number": "TRK000004",
+      "message": "High delay risk (90.0%) for San Jose -> Philadelphia",
+      "recommendations": [
+        "Consider alternative routing",
+        "Notify customer proactively",
+        "Monitor weather conditions"
+      ]
+    },
+    {
+      "type": "HIGH_DELAY_RISK",
+      "severity": "HIGH",
+      "tracking_number": "TRK000006",
+      "message": "High delay risk (90.0%) for Philadelphia -> Phoenix",
+      "recommendations": [
+        "Consider alternative routing",
+        "Notify customer proactively",
+        "Monitor weather conditions"
+      ]
+    }
+  ]
+}

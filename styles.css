@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #faf8ef;
+    color: #776e65;
+    line-height: 1.4;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 80px;
+    font-weight: bold;
+    color: #776e65;
+    margin: 0;
+}
+
+.scores {
+    display: flex;
+    gap: 10px;
+}
+
+.score-box {
+    background: #bbada0;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.score-title {
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+#score, #best-score {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.game-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+button {
+    background: #8f7a66;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background: #9f8b77;
+}
+
+.game-container {
+    position: relative;
+    background: #bbada0;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+    height: 470px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.grid-cell {
+    background: rgba(238, 228, 218, 0.35);
+    border-radius: 3px;
+    position: relative;
+}
+
+.tile {
+    position: absolute;
+    width: calc(25% - 15px);
+    height: calc(25% - 15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #776e65;
+    background: #eee4da;
+    border-radius: 3px;
+    transition: all 0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
+    will-change: transform, opacity;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tile-2 { background: #eee4da; }
+.tile-4 { background: #ede0c8; }
+.tile-8 { background: #f2b179; color: white; }
+.tile-16 { background: #f59563; color: white; }
+.tile-32 { background: #f67c5f; color: white; }
+.tile-64 { background: #f65e3b; color: white; }
+.tile-128 { 
+    background: #edcf72; 
+    color: white;
+    font-size: 30px;
+}
+.tile-256 { 
+    background: #edcc61; 
+    color: white;
+    font-size: 30px;
+}
+.tile-512 { 
+    background: #edc850; 
+    color: white;
+    font-size: 30px;
+}
+.tile-1024 { 
+    background: #edc53f; 
+    color: white;
+    font-size: 25px;
+}
+.tile-2048 { 
+    background: #edc22e; 
+    color: white;
+    font-size: 25px;
+}
+
+.game-over, .game-won {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(238, 228, 218, 0.73);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    display: none;
+}
+
+.game-over p, .game-won p {
+    font-size: 60px;
+    font-weight: bold;
+    color: #776e65;
+    margin-bottom: 20px;
+}
+
+.game-explanation {
+    text-align: center;
+    color: #776e65;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+@keyframes pop {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes merge {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.new-tile {
+    animation: appear 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+
+.merged-tile {
+    animation: merge 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+    z-index: 20;
+}
+
+.move-tile {
+    transition: all 0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.merged-tile {
+    animation: pop 0.15s ease-in-out;
+    z-index: 20;
+}

@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  # GreenPath Streamlit Frontend
+  streamlit:
+    build: 
+      context: .
+      dockerfile: Dockerfile.streamlit
+    ports:
+      - "8501:8501"
+    environment:
+      - DATABASE_URL=sqlite:///app/greenpath.db
+      - OPENROUTESERVICE_API_KEY=${OPENROUTESERVICE_API_KEY}
+      - FASTAPI_URL=http://fastapi:8000
+    volumes:
+      - ./data:/app/data
+      - ./greenpath.db:/app/greenpath.db
+    depends_on:
+      - fastapi
+    restart: unless-stopped
+    
+  # GreenPath FastAPI Backend
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile.fastapi
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///app/greenpath.db
+      - OPENROUTESERVICE_API_KEY=${OPENROUTESERVICE_API_KEY}
+    volumes:
+      - ./data:/app/data
+      - ./greenpath.db:/app/greenpath.db
+    restart: unless-stopped
+
+  # PostgreSQL Database (Optional - for production)
+  postgres:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=greenpath
+      - POSTGRES_USER=greenpath_user
+      - POSTGRES_PASSWORD=secure_greenpath_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+  # Redis for caching (optional)
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    networks:
+      - shipment_network
+
+volumes:
+  postgres_data:
+
+networks:
+  shipment_network:
+    driver: bridge
