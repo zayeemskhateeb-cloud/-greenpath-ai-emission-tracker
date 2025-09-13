@@ -16,9 +16,5 @@
   "env": {
     "FLASK_ENV": "production"
   },
-  "functions": {
-    "deploy.py": {
-      "maxDuration": 30
-    }
-  }
+ 
 }
