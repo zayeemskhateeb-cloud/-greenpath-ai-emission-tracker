@@ -21,3 +21,6 @@ psycopg2-binary==2.9.9
 redis==5.0.1
 snowflake-connector-python==3.6.0
 snowflake-sqlalchemy==1.5.1
+setuptools
+wheel
+
