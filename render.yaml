@@ -2,7 +2,6 @@ services:
   - type: web
     name: my-python-app
     env: python
-    # Change this line to a stable version
-    pythonVersion: "3.11" # Or "3.12"
+    pythonVersion: "3.11" # This is the line that fixes the problem
     buildCommand: "pip install -r requirements.txt"
     startCommand: "gunicorn myapp.wsgi"
