@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: my-python-app
+    env: python
+    pythonVersion: "3.11" # Or "3.12", "3.10", etc.
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn myapp.wsgi"
